@@ -1,4 +1,4 @@
 baseURL = 'https://amdjml.com/'
 languageCode = 'en-us'
 title = 'Ahmad Jamali'
-theme = 'ananke'
+theme = 'hugo-tania'
