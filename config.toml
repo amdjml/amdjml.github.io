@@ -1,4 +1,4 @@
-baseURL = 'http://amdjml.com/'
+baseURL = 'https://amdjml.com/'
 languageCode = 'en-us'
 title = 'Ahmad Jamali'
 theme = 'ananke'
