@@ -1,0 +1,4 @@
+baseURL = 'http://amdjml.com/'
+languageCode = 'en-us'
+title = 'Ahmad Jamali'
+theme = 'ananke'
