@@ -1,7 +1,7 @@
-baseURL = 'https://amdjml.com/'
-languageCode = 'en-us'
-title = 'Ahmad Jamali'
-theme = 'hugo-tania'
+baseURL: "https://amdjml.com/"
+languageCode: "en-us"
+title: "Ahmad Jamali"
+theme: "hugo-tania"
 paginate: 6
 
 disqusShortname: https-hugo-tania-netlify-app
@@ -17,9 +17,9 @@ params:
   # Default to true
   enableFootnotes: true
   
-  siteName: "Hugo Tania is Amazing"
-  siteDesc: "Hugo is Absurdly Fast!"
-  author: "Hugo Tania"
+  siteName: "Ahmad Jamali"
+  siteDesc: "Ahmad Jamali's Website"
+  author: "Ahmad jamali"
 
   colorScheme:
     # Enable toggle colorScheme
@@ -36,7 +36,7 @@ params:
   # Show your socail information with icon on index bio with `_index.md` content.
   socialOptions:
     dev-to:
-    email:
+    email: hello@amdjml.com
     facebook:
     github:
     instagram:
