@@ -48,13 +48,13 @@ googleAnalyticsAsync = true # not required
 
 [[params.social]]
    name = "linkedin"
-   link = "#"
+   link = "https://www.linkedin.com/in/ahmadjamali"
 
 # Markup highlighting
 [markup]
   [markup.highlight]
     codeFences = true
-    guessSyntax = false
+    guessSyntax = true
     hl_Lines = ""
     lineNoStart = 1
     lineNos = false
