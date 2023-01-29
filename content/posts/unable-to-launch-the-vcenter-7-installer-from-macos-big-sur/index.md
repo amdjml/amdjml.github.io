@@ -18,7 +18,7 @@ I had to go to System Pereferences > Security & Privacy > General and manually c
 
 That allowed me to launch the installer, and then clicked on upgrade and provided the requested info and clicked on continue. This is where I got the next warning message about "ovftool" cannot be opened because its developer cannot be verified. 
 
-![Security & Privacy](images/vmware-image2.png "Unverified Developer")
+![Security & Privacy](images/vmware-image1.png "Unverified Developer")
 
 The problem was that this time, it didn't even allow me to open the Security & Privacy and manually click open, it only allowed me to either cancel the process or Eject Disk Image.
 
