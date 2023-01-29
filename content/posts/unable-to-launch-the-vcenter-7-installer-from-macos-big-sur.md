@@ -12,13 +12,13 @@ draft: false
 
 Last Friday, I wanted to upgrade my vCenter server with embedded platform (VCSA) from version 6.7 to 7.0. I downloaded the ISO and mounted that on my Mac. However, as soon as I clicked to launch the UI installer is when my Mac started to block it and not even letting me launch it. See the screenshot below:
 
-![Security & Privacy](../images/vmware-image1.png "Malicious Software")
+![Security & Privacy](/static/images/vmware-image1.png "Malicious Software")
 
 I had to go to System Pereferences > Security & Privacy > General and manually click on "Open Anyway" to launch this installer because it was blocked from use as it is not from an identified developer according to Apple.
 
 That allowed me to launch the installer, and then clicked on upgrade and provided the requested info and clicked on continue. This is where I got the next warning message about "ovftool" cannot be opened because its developer cannot be verified. 
 
-![Security & Privacy](../images/vmware-image2.png "Unverified Developer")
+![Security & Privacy](/static/images/vmware-image2.png "Unverified Developer")
 
 The problem was that this time, it didn't even allow me to open the Security & Privacy and manually click open, it only allowed me to either cancel the process or Eject Disk Image.
 
