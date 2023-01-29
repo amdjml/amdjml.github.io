@@ -1,0 +1,64 @@
+baseURL = "https://amdjml.com/"
+languageCode = "en-us"
+title = "Ahmad Jamali"
+theme = "cactus"
+googleAnalytics= "G-83YRRQSTEN"
+googleAnalyticsAsync = true # not required
+
+[params]
+   colortheme = "white" # dark, light, white, or classic
+   description = "A systems administrator's blog from Northern Virginia."
+   mainSection = "posts"
+   showAllPostsOnHomePage = false
+   postsOnHomePage = 5
+   tagsOverview = false
+   copyright = "Ahmad Jamali" # cactus theme will use site title if copyright is not set
+   rss = true
+   showReadTime = true
+   
+# Main menu which appears below site header.
+[[menu.main]]
+   name = "Home"
+   url = "/"
+   weight = 1
+
+[[menu.main]]
+   name = "All posts"
+   url = "/posts"
+   weight = 2
+
+[[menu.main]]
+   name = "Tags"
+   url = "/tags"
+   weight = 3
+
+[[menu.main]]
+   name = "About"
+   url = "/about"
+   weight = 4
+
+# Social media links
+[[params.social]]
+   name = "github"
+   link = "https://github.com/amdjml"
+
+[[params.social]]
+   name = "email"
+   link = "amd.jml@gmail.com" # no need for "mailto:" at the start
+
+[[params.social]]
+   name = "linkedin"
+   link = "#"
+
+# Markup highlighting
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4
