@@ -30,9 +30,9 @@ After googling around for these errors, I came across this [KB article](https://
 Example:<br>
 `sudo xattr -r -d com.apple.quarantine VMware-VCSA-all-6.7.0-Update-15132721`<br>
 `sudo xattr -r -d com.apple.quarantine VMware-VCSA-all-7.0.0-15952498.iso`
-4. Mount the ISO and open UI Installer
-5. Install/Upgrade vCenter Server 6.7/7.0
-6. Execute `sudo spctl —master-enable` in terminal.
+1. Mount the ISO and open UI Installer
+2. Install/Upgrade vCenter Server 6.7/7.0
+3. Execute `sudo spctl —master-enable` in terminal.
 
 Once you've done this, you will be able to cruise through the upgrade process. It was a bit annoying to see this, but I am glad this workaround was available.
 
