@@ -64,4 +64,4 @@ Alias /mailgraph /usr/lib/cgi-bin
 ## 4. Success
 You are all done, you can access it by going to `http://(hostname or IP address)/mailgraph/mailgraph.cgi` with a Web Browser, then Mailgraph index site will be shown and it's possible to see statics for any future activities.
 
-![Mailgraph](../../images/mailgraph.png "Mailgraph Stats")
+![Mailgraph](../images/mailgraph.png "Mailgraph Stats")
