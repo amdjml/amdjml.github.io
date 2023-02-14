@@ -17,9 +17,9 @@ googleAnalyticsAsync = true # not required
    showReadTime = true
    [params.comments]
      enabled = true
-   #   engine = "utterances"
-   #   repo = "amdjml/amdjml.github.io"
-   #   theme = "preferred-color-scheme"
+     engine = "utterances"
+     repo = "amdjml/amdjml.github.io"
+     theme = "preferred-color-scheme"
    
 # Main menu which appears below site header.
 [[menu.main]]
