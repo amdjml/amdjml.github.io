@@ -6,7 +6,6 @@ copyright = "Ahmad Jamali"
 googleAnalytics= "G-83YRRQSTEN"
 googleAnalyticsAsync = true
 
-# Main menu
 [[menu.main]]
    name = "Home"
    url = "/"
@@ -27,7 +26,6 @@ googleAnalyticsAsync = true
    url = "/about"
    weight = 4
 
-# Markups
 [markup]
   [markup.tableOfContents]
     endLevel = 4
@@ -44,7 +42,6 @@ googleAnalyticsAsync = true
     style = "dracula"
     tabWidth = 4
 
-# Params
 [params]
    colortheme = "white"
    rss = true
@@ -69,7 +66,6 @@ googleAnalyticsAsync = true
        repo = "amdjml/amdjml.github.io"
        theme = "preferred-color-scheme"
 
-# Socials
 [[params.social]]
    name = "github"
    link = "https://github.com/amdjml"
