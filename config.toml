@@ -15,11 +15,12 @@ googleAnalyticsAsync = true # not required
    copyright = "Ahmad Jamali" # cactus theme will use site title if copyright is not set
    rss = true
    showReadTime = true
-   [params.comments]
-     enabled = true
-     engine = "utterances"
-     repo = "amdjml/amdjml.github.io"
-     theme = "preferred-color-scheme"
+     [params.comments]
+    enabled = true # default
+    engine = "utterances" # only disqus, utterances, and cactus_comments is supported
+    [params.comments.utterances]
+      repo = "amdjml/amdjml.github.io"
+      theme = "preferred-color-scheme"
    
 # Main menu which appears below site header.
 [[menu.main]]
