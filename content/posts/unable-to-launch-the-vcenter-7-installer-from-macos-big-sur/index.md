@@ -1,6 +1,7 @@
 ---
 title: "Unable to Launch the vCenter 7 Installer From MacOS Big Sur"
 date: 2021-03-30T10:52:21-04:00
+show_gallery: false
 category: tech
 tags: 
    - vCenter

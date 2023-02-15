@@ -1,6 +1,7 @@
 ---
 title: "Mount the Shared Folders From Synology on Your Ubuntu 18.04 LTS Server"
 date: 2020-02-13T08:33:27-05:00
+show_gallery: false
 category: tech
 tags: 
    - nfs
