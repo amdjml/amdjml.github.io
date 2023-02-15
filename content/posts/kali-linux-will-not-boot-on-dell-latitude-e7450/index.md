@@ -1,7 +1,6 @@
 ---
 title: "Kali Linux Will Not Boot on Dell Latitude E7450"
 date: 2019-05-31T10:26:03-05:00
-show_gallery: false
 category: tech
 tags: 
    - kali

@@ -1,7 +1,6 @@
 ---
 title: "Postfix Monitoring With Mailgraph on Ubuntu 18.04 Lts"
 date: 2019-01-24T15:45:01-05:00
-show_gallery: false
 category: tech
 tags: 
    - postfix

@@ -1,7 +1,6 @@
 ---
 title: "How Did I Build My Blog With Hugo Github Pages and Github Actions"
 date: 2021-03-24T12:42:44-04:00
-show_gallery: false
 category: tech
 tags: 
    - hugo
