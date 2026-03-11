@@ -17,9 +17,91 @@
   {{- $styles := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "scss/style.scss" . | resources.ToCSS $options | resources.Fingerprint "sha512" }}
   <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
 
-  <!-- Theme Auto-Detection Script -->
-  {{ $themeScript := resources.Get "js/theme.js" | js.Build (dict "targetPath" "js/theme.min.js") | fingerprint "" }}
-  <script src="{{ $themeScript.Permalink }}"></script>
+  <!-- Theme Auto-Detection Script (Inline) -->
+  <script id="theme-init">
+    (function() {
+      const STORAGE_KEY = 'colortheme';
+      const THEMES = {'white': 'Light', 'light': 'Light', 'dark': 'Dark', 'classic': 'Classic'};
+      let saved = localStorage.getItem(STORAGE_KEY) || null;
+
+      // Set initial theme from storage or auto-detect
+      if (saved && THEMES[saved]) {
+        document.body.dataset.theme = saved;
+      } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        saved = prefersDark ? 'dark' : 'white';
+        document.body.dataset.theme = saved;
+      }
+
+      // Store class for CSS fallback
+      document.body.classList.add(saved);
+
+      function toggleDropdown() {
+        const visible = document.querySelector('[data-theme-dropdown]').style.display === 'block';
+        document.querySelector('[data-theme-dropdown]').style.display = visible ? 'none' : 'block';
+      }
+
+      function setupThemeSelector() {
+        const headerNav = document.querySelector('#header nav ul');
+        if (!headerNav) return;
+
+        // Create theme button after first menu item
+        const themeBtn = document.createElement('li');
+        themeBtn.className = 'theme-btn';
+        themeBtn.setAttribute('data-theme-toggle', 'true');
+
+        const icon = document.createElement('span');
+        icon.className = 'theme-icon';
+        icon.innerHTML = '&#9783;'; // Gear icon
+
+        themeBtn.appendChild(icon);
+        headerNav.insertBefore(themeBtn, headerNav.firstChild.nextSibling);
+
+        // Create dropdown container
+        const dropdownContainer = document.createElement('div');
+        dropdownContainer.className = 'theme-dropdown';
+        dropdownContainer.setAttribute('data-theme-dropdown', 'true');
+
+        const ul = document.createElement('ul');
+
+        Object.keys(THEMES).forEach(theme => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+
+          a.textContent = THEMES[theme];
+          a.dataset.theme = theme;
+          a.style.cssText = 'display:block;padding:4px 12px;color:#363533;text-decoration:none;border-radius:4px;font-size:0.8rem;';
+
+          a.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.body.dataset.theme = theme;
+            toggleDropdown();
+          });
+
+          li.appendChild(a);
+          ul.appendChild(li);
+        });
+
+        dropdownContainer.appendChild(ul);
+
+        // Insert dropdown after headerNav in body (for positioning)
+        document.body.insertBefore(dropdownContainer, headerNav.nextSibling);
+
+        themeBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          toggleDropdown();
+        });
+      }
+
+      // Setup theme selector when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupThemeSelector);
+      } else {
+        setTimeout(setupThemeSelector, 100);
+      }
+
+    })();
+  </script>
 
   <!-- Custom CSS -->
   {{ range .Site.Params.css }} <link rel="stylesheet" href="{{ . | absURL }}"> {{ end }}
