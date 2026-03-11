@@ -32,8 +32,8 @@ jobs:
     steps:
       - name: Install Hugo CLI
         run: |
-          sudo apt-get update \
-            && sudo apt-get install -y hugo
+          apt-get update \
+            && apt-get install -y hugo
       - name: Install Dart Sass
         run: sudo npm install -g dart-sass
       - name: Checkout
