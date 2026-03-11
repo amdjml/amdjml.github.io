@@ -100,6 +100,77 @@ body {
     }
   }
 }
+
+// ========== Dynamic Theme Switching (via [data-theme] attribute) ==========
+// These rules apply when JS sets body.dataset.theme
+
+[data-theme="dark"],
+body[data-theme="dark"] {
+  background-color: #1d1f21 !important;
+
+  a {
+    color: #c9cacc;
+
+    @include underline(5px, rgba(43, 188, 138, 0.7));
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 0.7) 4px, rgba(43, 188, 138, 0.7));
+    }
+  }
+
+  pre {
+    border-color: #666;
+  }
+
+  code {
+    border-color: #666;
+  }
+}
+
+[data-theme="light"],
+body[data-theme="light"] {
+  background-color: #e2e0de !important;
+
+  a {
+    color: #363533;
+
+    @include underline(5px, rgba(43, 188, 138, 1));
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 1) 4px, rgba(43, 188, 138, 1));
+    }
+  }
+}
+
+[data-theme="white"],
+body[data-theme="white"] {
+  background-color: #ffffff !important;
+
+  a {
+    color: #363533;
+
+    @include underline(5px, #2bbc8a);
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, #2bbc8a 4px, #2bbc8a);
+    }
+  }
+}
+
+[data-theme="classic"],
+body[data-theme="classic"] {
+  background-color: #f5f6f3 !important;
+
+  a {
+    color: #2d3829;
+
+    @include underline(5px, #d44375);
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, #d44375 4px, #d44375);
+    }
+  }
+}
 @media (min-width: 540px) {
   .image-wrap {
     flex-direction: row;
@@ -111,6 +182,77 @@ body {
     }
     p {
       flex: 1 0 65%;
+    }
+  }
+}
+
+// ========== Dynamic Theme Switching (via [data-theme] attribute) ==========
+// These rules apply when JS sets body.dataset.theme
+
+[data-theme="dark"],
+body[data-theme="dark"] {
+  background-color: #1d1f21 !important;
+
+  a {
+    color: #c9cacc;
+
+    @include underline(5px, rgba(43, 188, 138, 0.7));
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 0.7) 4px, rgba(43, 188, 138, 0.7));
+    }
+  }
+
+  pre {
+    border-color: #666;
+  }
+
+  code {
+    border-color: #666;
+  }
+}
+
+[data-theme="light"],
+body[data-theme="light"] {
+  background-color: #e2e0de !important;
+
+  a {
+    color: #363533;
+
+    @include underline(5px, rgba(43, 188, 138, 1));
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 1) 4px, rgba(43, 188, 138, 1));
+    }
+  }
+}
+
+[data-theme="white"],
+body[data-theme="white"] {
+  background-color: #ffffff !important;
+
+  a {
+    color: #363533;
+
+    @include underline(5px, #2bbc8a);
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, #2bbc8a 4px, #2bbc8a);
+    }
+  }
+}
+
+[data-theme="classic"],
+body[data-theme="classic"] {
+  background-color: #f5f6f3 !important;
+
+  a {
+    color: #2d3829;
+
+    @include underline(5px, #d44375);
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, #d44375 4px, #d44375);
     }
   }
 }
@@ -128,9 +270,151 @@ body {
   }
 }
 
+// ========== Dynamic Theme Switching (via [data-theme] attribute) ==========
+// These rules apply when JS sets body.dataset.theme
+
+[data-theme="dark"],
+body[data-theme="dark"] {
+  background-color: #1d1f21 !important;
+
+  a {
+    color: #c9cacc;
+
+    @include underline(5px, rgba(43, 188, 138, 0.7));
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 0.7) 4px, rgba(43, 188, 138, 0.7));
+    }
+  }
+
+  pre {
+    border-color: #666;
+  }
+
+  code {
+    border-color: #666;
+  }
+}
+
+[data-theme="light"],
+body[data-theme="light"] {
+  background-color: #e2e0de !important;
+
+  a {
+    color: #363533;
+
+    @include underline(5px, rgba(43, 188, 138, 1));
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 1) 4px, rgba(43, 188, 138, 1));
+    }
+  }
+}
+
+[data-theme="white"],
+body[data-theme="white"] {
+  background-color: #ffffff !important;
+
+  a {
+    color: #363533;
+
+    @include underline(5px, #2bbc8a);
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, #2bbc8a 4px, #2bbc8a);
+    }
+  }
+}
+
+[data-theme="classic"],
+body[data-theme="classic"] {
+  background-color: #f5f6f3 !important;
+
+  a {
+    color: #2d3829;
+
+    @include underline(5px, #d44375);
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, #d44375 4px, #d44375);
+    }
+  }
+}
+
 @media (min-width: 480px) {
   p {
     text-align: justify;
+  }
+}
+
+// ========== Dynamic Theme Switching (via [data-theme] attribute) ==========
+// These rules apply when JS sets body.dataset.theme
+
+[data-theme="dark"],
+body[data-theme="dark"] {
+  background-color: #1d1f21 !important;
+
+  a {
+    color: #c9cacc;
+
+    @include underline(5px, rgba(43, 188, 138, 0.7));
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 0.7) 4px, rgba(43, 188, 138, 0.7));
+    }
+  }
+
+  pre {
+    border-color: #666;
+  }
+
+  code {
+    border-color: #666;
+  }
+}
+
+[data-theme="light"],
+body[data-theme="light"] {
+  background-color: #e2e0de !important;
+
+  a {
+    color: #363533;
+
+    @include underline(5px, rgba(43, 188, 138, 1));
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 1) 4px, rgba(43, 188, 138, 1));
+    }
+  }
+}
+
+[data-theme="white"],
+body[data-theme="white"] {
+  background-color: #ffffff !important;
+
+  a {
+    color: #363533;
+
+    @include underline(5px, #2bbc8a);
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, #2bbc8a 4px, #2bbc8a);
+    }
+  }
+}
+
+[data-theme="classic"],
+body[data-theme="classic"] {
+  background-color: #f5f6f3 !important;
+
+  a {
+    color: #2d3829;
+
+    @include underline(5px, #d44375);
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, #d44375 4px, #d44375);
+    }
   }
 }
 
@@ -190,6 +474,77 @@ pre {
   }
 }
 
+// ========== Dynamic Theme Switching (via [data-theme] attribute) ==========
+// These rules apply when JS sets body.dataset.theme
+
+[data-theme="dark"],
+body[data-theme="dark"] {
+  background-color: #1d1f21 !important;
+
+  a {
+    color: #c9cacc;
+
+    @include underline(5px, rgba(43, 188, 138, 0.7));
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 0.7) 4px, rgba(43, 188, 138, 0.7));
+    }
+  }
+
+  pre {
+    border-color: #666;
+  }
+
+  code {
+    border-color: #666;
+  }
+}
+
+[data-theme="light"],
+body[data-theme="light"] {
+  background-color: #e2e0de !important;
+
+  a {
+    color: #363533;
+
+    @include underline(5px, rgba(43, 188, 138, 1));
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 1) 4px, rgba(43, 188, 138, 1));
+    }
+  }
+}
+
+[data-theme="white"],
+body[data-theme="white"] {
+  background-color: #ffffff !important;
+
+  a {
+    color: #363533;
+
+    @include underline(5px, #2bbc8a);
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, #2bbc8a 4px, #2bbc8a);
+    }
+  }
+}
+
+[data-theme="classic"],
+body[data-theme="classic"] {
+  background-color: #f5f6f3 !important;
+
+  a {
+    color: #2d3829;
+
+    @include underline(5px, #d44375);
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, #d44375 4px, #d44375);
+    }
+  }
+}
+
 code {
   font-family: $font-family-mono;
   padding: 0 5px;
@@ -226,6 +581,77 @@ code {
       pre {
         padding-left: 0;
       }
+    }
+  }
+}
+
+// ========== Dynamic Theme Switching (via [data-theme] attribute) ==========
+// These rules apply when JS sets body.dataset.theme
+
+[data-theme="dark"],
+body[data-theme="dark"] {
+  background-color: #1d1f21 !important;
+
+  a {
+    color: #c9cacc;
+
+    @include underline(5px, rgba(43, 188, 138, 0.7));
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 0.7) 4px, rgba(43, 188, 138, 0.7));
+    }
+  }
+
+  pre {
+    border-color: #666;
+  }
+
+  code {
+    border-color: #666;
+  }
+}
+
+[data-theme="light"],
+body[data-theme="light"] {
+  background-color: #e2e0de !important;
+
+  a {
+    color: #363533;
+
+    @include underline(5px, rgba(43, 188, 138, 1));
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 1) 4px, rgba(43, 188, 138, 1));
+    }
+  }
+}
+
+[data-theme="white"],
+body[data-theme="white"] {
+  background-color: #ffffff !important;
+
+  a {
+    color: #363533;
+
+    @include underline(5px, #2bbc8a);
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, #2bbc8a 4px, #2bbc8a);
+    }
+  }
+}
+
+[data-theme="classic"],
+body[data-theme="classic"] {
+  background-color: #f5f6f3 !important;
+
+  a {
+    color: #2d3829;
+
+    @include underline(5px, #d44375);
+
+    &:hover {
+      background-image: linear-gradient(transparent, transparent 4px, #d44375 4px, #d44375);
     }
   }
 }

@@ -43,9 +43,10 @@ googleAnalyticsAsync = true
     tabWidth = 4
 
 [params]
-   colortheme = "white"
+   # Default theme (overridden by JS based on system preference + localStorage)
+   colortheme = "light"
    rss = true
-   googleAnalyticsAsync = true 
+   googleAnalyticsAsync = true
    showAllPostsArchive = false 
 
    description = "A systems administrator's blog from Northern Virginia."
