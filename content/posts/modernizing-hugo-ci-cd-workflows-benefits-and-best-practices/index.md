@@ -13,9 +13,9 @@ draft: false
 
 # Modernizing Hugo CI/CD Workflows: Benefits and Best Practices
 
-Keeping your GitHub Actions workflows up-to-date is crucial for maintaining a healthy, efficient deployment pipeline. In this post, I'll walk you through modernizing our Hugo site's CI/CD workflow and explain why each change matters.
+Keeping your GitHub Actions workflows up-to-date is crucial for maintaining a healthy, efficient deployment pipeline. In this post, I'll walk you through how I modernized my Hugo site's CI/CD workflow and explain why each change matters.
 
-## Before We Started: The Old Workflow
+## Before I Started: The Old Workflow
 
 The original GitHub Actions workflow used several outdated components:
 
@@ -25,14 +25,14 @@ The original GitHub Actions workflow used several outdated components:
 - `actions/deploy-pages@v1` - No longer maintained
 
 ```yaml
-# ❌ Outdated workflow components
-- uses: actions/checkout@v3
-- uses: actions/configure-pages@v2
-- uses: actions/upload-pages-artifact@v1
-- uses: actions/deploy-pages@v1
+# ❌ My outdated workflow components:
+- `actions/checkout@v3` - Over 2 years old with known security concerns
+- `actions/configure-pages@v2` - Deprecated, missing recent features
+- `actions/upload-pages-artifact@v1` - Legacy version with bugs
+- `actions/deploy-pages@v1` - No longer maintained
 ```
 
-The installation methods were also problematic:
+These installation methods were also problematic:
 
 ```yaml
 # ❌ Old Hugo installation (manual wget with hardcoded version)
@@ -51,7 +51,7 @@ HUGO_VERSION: 0.108.0
 
 ### 1. Updated GitHub Actions to Latest Stable Versions
 
-We migrated to the latest versions of all GitHub Actions components:
+I migrated to the latest versions of all GitHub Actions components:
 
 | Action | Old Version | New Version | Why? |
 |--------|------------|-------------|------|
@@ -73,7 +73,7 @@ We migrated to the latest versions of all GitHub Actions components:
 
 ### 2. Simplified Hugo Installation
 
-We replaced the manual wget installation with `apt-get`:
+I replaced the manual wget installation with `apt-get`:
 
 ```yaml
 # ✅ Modern Hugo installation via apt-get
@@ -107,7 +107,7 @@ Switched from Snap to npm for better cross-platform compatibility:
 
 ### 4. Added Production Environment Flags
 
-We added environment variables to enable production optimizations during builds:
+I added environment variables to enable production optimizations during builds:
 
 ```yaml
 # ✅ Production flags for optimized builds
@@ -251,7 +251,7 @@ Keep a changelog of workflow updates:
 
 **Symptom:** HTTP 403/429 errors during package download
 
-**Solution:** We switched to `apt-get` which handles caching internally. If you must use direct downloads, add retry logic:
+**Solution:** I switched to `apt-get` which handles caching internally. If you must use direct downloads, add retry logic:
 
 ```yaml
 run: |
