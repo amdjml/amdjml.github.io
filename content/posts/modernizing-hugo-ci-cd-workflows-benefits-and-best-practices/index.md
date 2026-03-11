@@ -1,6 +1,6 @@
 ---
 title: "Modernizing Hugo CI/CD Workflows: Benefits and Best Practices"
-date: 2026-03-10T23:53:47-04:00
+date: 2026-03-11T00:00:00-04:00
 category: tech
 tags:
   - hugo
@@ -10,9 +10,6 @@ tags:
   - deployment
 draft: false
 ---
-
-# Modernizing Hugo CI/CD Workflows: Benefits and Best Practices
-
 Keeping your GitHub Actions workflows up-to-date is crucial for maintaining a healthy, efficient deployment pipeline. In this post, I'll walk you through how I modernized my Hugo site's CI/CD workflow and explain why each change matters.
 
 ## Before I Started: The Old Workflow
