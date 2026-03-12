@@ -5,420 +5,77 @@
 @import "extend";
 @import "fonts";
 
-// global-reset()
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
+*,:before,:after { box-sizing: border-box; }
 html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  border-top: 2px solid $color-text;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+  margin: 0; padding: 0; height: 100%; border-top: 2px solid $color-text; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
-  height: 100%;
-  background-color: $color-background;
-  color: $color-text;
-  font-display: swap;
-  font-weight: 400;
-  font-size: $font-size;
-  font-family: $font-family-body;
-  line-height: $line-height;
-  text-rendering: geometricPrecision;
-  flex: 1;
-
-  @include antialias();
-
-  @extend $base-style !optional;
+  margin: 0; height: 100%; background-color: $color-background; color: $color-text; font-display: swap; font-weight: 400; font-size: $font-size; font-family: $font-family-body; line-height: $line-height; text-rendering: geometricPrecision; flex: 1;
+  @include antialias(); @extend $base-style !optional;
 }
+
 .content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  overflow-wrap: break-word;
-
-  p {
-    @include hyphens(auto);
-  }
-  code {
-    @include hyphens(manual);
-  }
-  a {
-    color: $color-text;
-    text-decoration: none;
-
-    @include underline(5px, $color-text);
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, $color-link 4px, $color-link);
-    }
-  }
-  a.icon {
-    background: none;
-
-    &:hover {
-      color: $color-link;
-    }
-  }
-  h1 a,
-  .h1 a,
-  h2 a,
-  h3 a,
-  h4 a,
-  h5 a,
-  h6 a {
-    background: none;
-    color: inherit;
-    text-decoration: none;
-  }
-  h1 a:hover,
-  .h1 a:hover,
-  h2 a:hover,
-  h3 a:hover,
-  h4 a:hover,
-  h5 a:hover,
-  h6 a:hover {
-    @include underline(6px, $color-link);
-  }
-  h6 {
-    a {
-      background: none;
-      color: inherit;
-      text-decoration: none;
-    }
-  }
-  h6 {
-    a:hover {
-      @include underline(6px, $color-link);
-    }
-  }
+  position: relative; display: flex; flex-direction: column; min-height: 100%; overflow-wrap: break-word;
+  p { @include hyphens(auto); }
+  code { @include hyphens(manual); }
+  a { color: $color-text; text-decoration: none; @include underline(5px, $color-text); &:hover { background-image: linear-gradient(transparent, transparent 4px, $color-link 4px, $color-link); } }
+  a.icon { background: none; &:hover { color: $color-link; } }
+  h1 a,.h1 a,h2 a,h3 a,h4 a,h5 a,h6 a { background: none; color: inherit; text-decoration: none; }
+  h1 a:hover,.h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover { @include underline(6px, $color-link); }
 }
 
-// ========== Dynamic Theme Switching (via [data-theme] attribute) ==========
-// These rules apply when JS sets body.dataset.theme
+// ========== THEME SWITCHING (data-theme attribute) ==========
 
-[data-theme="dark"],
-body[data-theme="dark"] {
-  background-color: #1d1f21 !important;
-
-  a {
-    color: #c9cacc;
-
-    @include underline(5px, rgba(43, 188, 138, 0.7));
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 0.7) 4px, rgba(43, 188, 138, 0.7));
-    }
-  }
-
-  pre {
-    border-color: #666;
-  }
-
-  code {
-    border-color: #666;
-  }
+[data-theme="dark"],body[data-theme="dark"] { background-color: #1d1f21 !important;
+  a { color: #c9cacc; @include underline(5px, rgba(43, 188, 138, 0.7)); &:hover { background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 0.7) 4px, rgba(43, 188, 138, 0.7)); } }
+  pre { border-color: #666; } code { border-color: #666; }
 }
 
-[data-theme="light"],
-body[data-theme="light"] {
-  background-color: #e2e0de !important;
-
-  a {
-    color: #363533;
-
-    @include underline(5px, rgba(43, 188, 138, 1));
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 1) 4px, rgba(43, 188, 138, 1));
-    }
-  }
+[data-theme="light"],body[data-theme="light"] { background-color: #e2e0de !important;
+  a { color: #363533; @include underline(5px, rgba(43, 188, 138, 1)); &:hover { background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 1) 4px, rgba(43, 188, 138, 1)); } }
 }
 
-[data-theme="white"],
-body[data-theme="white"] {
-  background-color: #ffffff !important;
-
-  a {
-    color: #363533;
-
-    @include underline(5px, #2bbc8a);
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, #2bbc8a 4px, #2bbc8a);
-    }
-  }
+[data-theme="white"],body[data-theme="white"] { background-color: #ffffff !important;
+  a { color: #363533; @include underline(5px, #2bbc8a); &:hover { background-image: linear-gradient(transparent, transparent 4px, #2bbc8a 4px, #2bbc8a); } }
 }
 
-[data-theme="classic"],
-body[data-theme="classic"] {
-  background-color: #f5f6f3 !important;
-
-  a {
-    color: #2d3829;
-
-    @include underline(5px, #d44375);
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, #d44375 4px, #d44375);
-    }
-  }
-}
-@media (min-width: 540px) {
-  .image-wrap {
-    flex-direction: row;
-    margin-bottom: 2rem;
-
-    .image-block {
-      flex: 1 0 35%;
-      margin-right: 2rem;
-    }
-    p {
-      flex: 1 0 65%;
-    }
-  }
+[data-theme="classic"],body[data-theme="classic"] { background-color: #f5f6f3 !important;
+  a { color: #2d3829; @include underline(5px, #d44375); &:hover { background-image: linear-gradient(transparent, transparent 4px, #d44375 4px, #d44375); } }
 }
 
-// ========== Dynamic Theme Switching (via [data-theme] attribute) ==========
-// These rules apply when JS sets body.dataset.theme
+// Theme toggle styling
+.theme-btn { position: relative; z-index: 100; margin-right: 8px; }
+.theme-dropdown {
+  position: absolute; top: 100%; right: 0; left: auto; background: rgba(255, 255, 255, 0.95); border-radius: 4px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); min-width: 100px;
+  ul { list-style: none; margin: 0; padding: 8px 0; } li { margin: 0; }
+  a { display: block; padding: 6px 16px; color: #363533; text-decoration: none; font-size: 0.85rem; transition: background 0.15s ease; &:hover { background: rgba(0, 0, 0, 0.05); } }
+}
+.theme-icon { transition: filter 0.2s ease; &[data-moon] { filter: invert(1) brightness(0.8); } }
 
-[data-theme="dark"],
-body[data-theme="dark"] {
-  background-color: #1d1f21 !important;
+@media (min-width: 540px) { .image-wrap { flex-direction: row; margin-bottom: 2rem; .image-block { flex: 1 0 35%; margin-right: 2rem; } p { flex: 1 0 65%; } } }
 
-  a {
-    color: #c9cacc;
+@media (max-width: 480px) { .px3 { padding-right: 1rem; padding-left: 1rem; } .my4 { margin-top: 2rem; margin-bottom: 2rem; } }
 
-    @include underline(5px, rgba(43, 188, 138, 0.7));
+.max-width { max-width: $page-width; }
+@media (min-width: 480px) { p { text-align: justify; } }
 
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 0.7) 4px, rgba(43, 188, 138, 0.7));
-    }
-  }
+.content { max-width: $content-max-width; padding-right: 1em; padding-left: 1em; margin-right: auto; margin-left: auto; }
+.max-width { max-width: $page-width; }
 
-  pre {
-    border-color: #666;
-  }
-
-  code {
-    border-color: #666;
-  }
+pre { overflow-x: auto; padding: 15px 15px 10px 15px; border: 1px dotted $color-border; border-radius: 2px; -webkit-border-radius: 2px; font-size: 13px; font-family: $font-family-mono; line-height: 22px; position: relative;
+  .code-copy-btn { position: absolute; top: 0; right: 0; border: 0; border-radius: 0 2px; padding: 0; font-family: "JetBrains Mono", monospace; font-weight: 800; font-size: 0.9em; line-height: 1.7; color: #fff; background-color: #8c8c8c; min-width: 60px; text-align: center; cursor: pointer; letter-spacing: 0em; }
+  .code-copy-btn:hover { background-color: #666; color: #2bbc8a; } code { display: block; padding: 0; border: none; }
 }
 
-[data-theme="light"],
-body[data-theme="light"] {
-  background-color: #e2e0de !important;
+code { font-family: $font-family-mono; padding: 0 5px; border: 1px dotted $color-border; border-radius: 2px; -webkit-border-radius: 2px; }
 
-  a {
-    color: #363533;
+.highlight > div { border-radius: 2px; -webkit-border-radius: 2px; }
+.highlight pre { border: none; background: none; }
+.highlight table pre { margin-top: 0; }
+.highlight table td:first-child pre { padding-right: 0; }
+.highlight table td:last-child pre { padding-left: 0; }
 
-    @include underline(5px, rgba(43, 188, 138, 1));
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 1) 4px, rgba(43, 188, 138, 1));
-    }
-  }
-}
-
-[data-theme="white"],
-body[data-theme="white"] {
-  background-color: #ffffff !important;
-
-  a {
-    color: #363533;
-
-    @include underline(5px, #2bbc8a);
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, #2bbc8a 4px, #2bbc8a);
-    }
-  }
-}
-
-[data-theme="classic"],
-body[data-theme="classic"] {
-  background-color: #f5f6f3 !important;
-
-  a {
-    color: #2d3829;
-
-    @include underline(5px, #d44375);
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, #d44375 4px, #d44375);
-    }
-  }
-}
-.max-width {
-  max-width: $page-width;
-}
-@media (max-width: 480px) {  // smaller margins at smaller screen widths
-  .px3 {
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
-  .my4 {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-}
-
-// ========== Dynamic Theme Switching (via [data-theme] attribute) ==========
-// These rules apply when JS sets body.dataset.theme
-
-[data-theme="dark"],
-body[data-theme="dark"] {
-  background-color: #1d1f21 !important;
-
-  a {
-    color: #c9cacc;
-
-    @include underline(5px, rgba(43, 188, 138, 0.7));
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 0.7) 4px, rgba(43, 188, 138, 0.7));
-    }
-  }
-
-  pre {
-    border-color: #666;
-  }
-
-  code {
-    border-color: #666;
-  }
-}
-
-[data-theme="light"],
-body[data-theme="light"] {
-  background-color: #e2e0de !important;
-
-  a {
-    color: #363533;
-
-    @include underline(5px, rgba(43, 188, 138, 1));
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 1) 4px, rgba(43, 188, 138, 1));
-    }
-  }
-}
-
-[data-theme="white"],
-body[data-theme="white"] {
-  background-color: #ffffff !important;
-
-  a {
-    color: #363533;
-
-    @include underline(5px, #2bbc8a);
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, #2bbc8a 4px, #2bbc8a);
-    }
-  }
-}
-
-[data-theme="classic"],
-body[data-theme="classic"] {
-  background-color: #f5f6f3 !important;
-
-  a {
-    color: #2d3829;
-
-    @include underline(5px, #d44375);
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, #d44375 4px, #d44375);
-    }
-  }
-}
-
-@media (min-width: 480px) {
-  p {
-    text-align: justify;
-  }
-}
-
-// ========== Dynamic Theme Switching (via [data-theme] attribute) ==========
-// These rules apply when JS sets body.dataset.theme
-
-[data-theme="dark"],
-body[data-theme="dark"] {
-  background-color: #1d1f21 !important;
-
-  a {
-    color: #c9cacc;
-
-    @include underline(5px, rgba(43, 188, 138, 0.7));
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 0.7) 4px, rgba(43, 188, 138, 0.7));
-    }
-  }
-
-  pre {
-    border-color: #666;
-  }
-
-  code {
-    border-color: #666;
-  }
-}
-
-[data-theme="light"],
-body[data-theme="light"] {
-  background-color: #e2e0de !important;
-
-  a {
-    color: #363533;
-
-    @include underline(5px, rgba(43, 188, 138, 1));
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 1) 4px, rgba(43, 188, 138, 1));
-    }
-  }
-}
-
-[data-theme="white"],
-body[data-theme="white"] {
-  background-color: #ffffff !important;
-
-  a {
-    color: #363533;
-
-    @include underline(5px, #2bbc8a);
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, #2bbc8a 4px, #2bbc8a);
-    }
-  }
-}
-
-[data-theme="classic"],
-body[data-theme="classic"] {
-  background-color: #f5f6f3 !important;
-
-  a {
-    color: #2d3829;
-
-    @include underline(5px, #d44375);
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, #d44375 4px, #d44375);
-    }
-  }
-}
-
-@import "partial/header";
+// ========== COMPONENT IMPORTS ==========
 @import "partial/post/actions_desktop";
 @import "partial/post/actions_mobile";
 @import "partial/index";
@@ -431,227 +88,3 @@ body[data-theme="classic"] {
 @import "partial/tags";
 @import "partial/tooltip";
 @import "partial/categories";
-
-pre {
-  overflow-x: auto;
-  padding: 15px 15px 10px 15px;
-  border: 1px dotted $color-border;
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  font-size: 13px;
-  font-family: $font-family-mono;
-  line-height: 22px;
-  position: relative;
-
-  .code-copy-btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: 0;
-    border-radius: 0 2px;
-    padding: 0;
-    font-family: "JetBrains Mono", monospace;
-    font-weight: 800;
-    font-size: 0.9em;
-    line-height: 1.7;
-    color: #fff;
-    background-color: #8c8c8c;
-    min-width: 60px;
-    text-align: center;
-    cursor: pointer;
-    letter-spacing: 0em;
-  }
-
-  .code-copy-btn:hover {
-    background-color: #666;
-    color: #2bbc8a;
-  }
-
-  code {
-    display: block;
-    padding: 0;
-    border: none;
-  }
-}
-
-// ========== Dynamic Theme Switching (via [data-theme] attribute) ==========
-// These rules apply when JS sets body.dataset.theme
-
-[data-theme="dark"],
-body[data-theme="dark"] {
-  background-color: #1d1f21 !important;
-
-  a {
-    color: #c9cacc;
-
-    @include underline(5px, rgba(43, 188, 138, 0.7));
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 0.7) 4px, rgba(43, 188, 138, 0.7));
-    }
-  }
-
-  pre {
-    border-color: #666;
-  }
-
-  code {
-    border-color: #666;
-  }
-}
-
-[data-theme="light"],
-body[data-theme="light"] {
-  background-color: #e2e0de !important;
-
-  a {
-    color: #363533;
-
-    @include underline(5px, rgba(43, 188, 138, 1));
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 1) 4px, rgba(43, 188, 138, 1));
-    }
-  }
-}
-
-[data-theme="white"],
-body[data-theme="white"] {
-  background-color: #ffffff !important;
-
-  a {
-    color: #363533;
-
-    @include underline(5px, #2bbc8a);
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, #2bbc8a 4px, #2bbc8a);
-    }
-  }
-}
-
-[data-theme="classic"],
-body[data-theme="classic"] {
-  background-color: #f5f6f3 !important;
-
-  a {
-    color: #2d3829;
-
-    @include underline(5px, #d44375);
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, #d44375 4px, #d44375);
-    }
-  }
-}
-
-code {
-  font-family: $font-family-mono;
-  padding: 0 5px;
-  border: 1px dotted $color-border;
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-}
-
-.highlight {
-
-  & > div {
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-  }
-
-  pre {
-    border: none;
-    background: none;
-  }
-
-  table {
-
-    pre {
-      margin-top: 0;
-    }
-
-    td:first-child {
-      pre {
-        padding-right: 0;
-      }
-    }
-
-    td:last-child {
-      pre {
-        padding-left: 0;
-      }
-    }
-  }
-}
-
-// ========== Dynamic Theme Switching (via [data-theme] attribute) ==========
-// These rules apply when JS sets body.dataset.theme
-
-[data-theme="dark"],
-body[data-theme="dark"] {
-  background-color: #1d1f21 !important;
-
-  a {
-    color: #c9cacc;
-
-    @include underline(5px, rgba(43, 188, 138, 0.7));
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 0.7) 4px, rgba(43, 188, 138, 0.7));
-    }
-  }
-
-  pre {
-    border-color: #666;
-  }
-
-  code {
-    border-color: #666;
-  }
-}
-
-[data-theme="light"],
-body[data-theme="light"] {
-  background-color: #e2e0de !important;
-
-  a {
-    color: #363533;
-
-    @include underline(5px, rgba(43, 188, 138, 1));
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, rgba(43, 188, 138, 1) 4px, rgba(43, 188, 138, 1));
-    }
-  }
-}
-
-[data-theme="white"],
-body[data-theme="white"] {
-  background-color: #ffffff !important;
-
-  a {
-    color: #363533;
-
-    @include underline(5px, #2bbc8a);
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, #2bbc8a 4px, #2bbc8a);
-    }
-  }
-}
-
-[data-theme="classic"],
-body[data-theme="classic"] {
-  background-color: #f5f6f3 !important;
-
-  a {
-    color: #2d3829;
-
-    @include underline(5px, #d44375);
-
-    &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, #d44375 4px, #d44375);
-    }
-  }
-}
