@@ -42,10 +42,11 @@
       }
 
       function setupThemeSelector() {
-        const headerNav = document.querySelector('#header nav ul');
-        if (!headerNav) return;
+        const navUl = document.querySelector('#header #nav ul');
+        if (!navUl) return;
 
-        // Create theme button after first menu item
+        // Create theme button after first menu item (the hamburger icon li)
+        const firstLi = navUl.firstChild;
         const themeBtn = document.createElement('li');
         themeBtn.className = 'theme-btn';
         themeBtn.setAttribute('data-theme-toggle', 'true');
@@ -55,7 +56,9 @@
         icon.innerHTML = '&#9783;'; // Gear icon
 
         themeBtn.appendChild(icon);
-        headerNav.insertBefore(themeBtn, headerNav.firstChild.nextSibling);
+
+        // Insert after hamburger menu item (after its <a> child)
+        navUl.parentNode.insertBefore(themeBtn, firstLi.nextSibling);
 
         // Create dropdown container
         const dropdownContainer = document.createElement('div');
@@ -84,8 +87,8 @@
 
         dropdownContainer.appendChild(ul);
 
-        // Insert dropdown after headerNav in body (for positioning)
-        document.body.insertBefore(dropdownContainer, headerNav.nextSibling);
+        // Insert dropdown after theme button (for proper positioning)
+        navUl.parentNode.insertBefore(dropdownContainer, themeBtn.nextSibling);
 
         themeBtn.addEventListener('click', function(e) {
           e.stopPropagation();
